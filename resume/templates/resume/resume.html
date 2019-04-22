@@ -1,0 +1,125 @@
+{% extends "index.html" %}
+{% load static%}
+
+{% block content %}
+<div class="row justify-content-md-center"> 
+	<div class="col-12">
+	  <section class="container">
+
+    <!--Contact heading-->
+ <br>
+    <div class="row >
+
+        <!--Grid column-->
+        <div class="col-lg-8 mb-4 ">
+
+            <!--Form with header-->
+            <div class="card border-primary rounded-0">
+
+                <div class="card-header p-0">
+                    <div class="bg-primary text-white text-center py-2">
+                        <h3><i class="fas fa-file"></i></i> Resume </h3>
+                     </div>
+                </div>
+                <div class="card-body p-3">
+
+                    <div class="row" style="margin-top: 50px;">
+		<div class="col-12">
+			<h5>
+				<b> * ACADEMIC EDUCATION</b>
+				<hr>
+				<ul>
+					<li>
+						<b>B.Sc. in Information Technology (2014- 2018)</b> 
+						<ul>
+							<li>
+						    Information Technology Department,
+							</li>
+							<li>
+								Faculty of computer and Information,
+							</li>
+							<li>
+								Assiut University,
+							</li>
+						</ul>
+					</li>
+					<li>
+						<b>Graduation Project :</b>
+						<ul>
+							<li>
+								<b >Title : </b> ERP-Ecommerce
+							</li>
+							<li>
+								<b >Description : </b> <br>
+								<ul>
+									<li>1- Managing Central Database.</li>
+									<li>2- Marketing and Sales Operations.</li>
+									<li>3- hipping and distribution operations.</li>
+									<li>4- Economic operations (accounting costs, ..)</li>
+									<li>5- Admin can see reports for the system and manage it easily. The system contains
+									(Customer - Admin) chat capabilities 
+									for customer support​ .
+								    </li>
+								</ul>
+							</li>
+							<li>
+								<b >Software Tools : </b> 
+								<ul>
+									<li>Django Frame work (for Python)</li>
+									<li>Pycharm ,Sublime (Editor)</li>
+									<li>Linux (os)</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<b>* TECHNICAL SKILLS TRAINING :</b>
+				
+				<ul>
+				{% for obj in object_list %}
+				<li>{{obj.title}}<br><small style="margin-left: 10px;"><a href="{{obj.tech_train_url}}" target="_blank">see certificate</a></small></li>
+				  {% endfor %}	
+				</ul>
+				
+				<b> * Skills :</b>
+				<ul>
+					{% for obj in skills %}
+				 <li>{{obj.skills}}</li>
+				  {% endfor %}
+				</ul>
+				<b> * Interests :</b>
+				<ul>
+					{% for obj in interest %}
+				  <li>{{obj.interests}}</li>
+				  {% endfor %}
+				</ul>
+				
+			</h5>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-12" style="text-align: center;">
+			{% for obj in cv %}
+
+
+			 <a href="{{ obj.file.url }}" target="_blank"><button class="btn btn-outline-info mr-3">Download</button></a>
+
+			{% endfor %}
+		</div>
+	</div>
+                   
+
+                </div>
+
+            </div>
+          
+
+        </div>
+    </div>
+
+</section>
+    </div>
+</div>
+	<br>		
+{% endblock %}

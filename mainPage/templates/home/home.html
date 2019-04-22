@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+{% load static%}
+
+{% block content %}
+	<div class="row" style="margin-top:20px;margin-bottom: 20px;" >
+
+	   {% for obj in object_list %}
+		   	<div class="col-4" style="height: 350px;">
+		   		<img src="{{obj.photo.url}}" class="rounded" alt="Cinque Terre" style="width: 100%;height:100%"> 
+		   	</div>
+		   	<div class="col-8"  >
+		   		<div class="row" >
+			   	 <div class="card text-white"  >
+					  <div class="card-header" style="color: #1376F9" ><b>Info</b></div>
+					  <div class="card-body" style="color: #1376F9">
+					    <h2 class="card-title" style="font-size: 25px;"><b>Name :</b>{{obj.name}}</h2>
+				   		<h2 class="card-title" style="font-size: 25px;""><b>Career :</b>{{obj.career}}</h2>
+				   		<h2 class="card-title" style="font-size: 25px;""><b>Address :</b>{{obj.address}}</h2>
+				   		<h2 class="card-title" style="font-size: 25px;""><b>Education :</b>{{obj.education}}</h2>
+				   		<h2 class="card-title" style="font-size: 25px;""><b>E-mail :</b>{{obj.email}}</h2>
+				   		<h2 class="card-title" style="font-size: 25px;"><b>Mobile :</b>{{obj.mobile}}</h2>
+	                  </div>
+	               </div>
+	           </div><br>
+	               <div class="row">
+	               	 <div class="col-12">
+	               	 	<a href="https://www.facebook.com/mohamed.faried.1069" target="_blank">
+	              <img src="{% static 'img/face.png'%}" style="width: 50px;height: 50px;margin: 20px;"></a>
+	              <a href="https://www.linkedin.com/in/mohamed-abouseif-22a651145/" target="_blank">
+	              <img src="{% static 'img/square-linkedin-512.png'%}" style="width: 50px;height: 50px;margin: 20px;"></a>
+	              <a href="https://github.com/mohamedabouseif" target="_blank">
+	              <img src="{% static 'img/GitHub-Mark.png'%}" style="width: 50px;height: 50px;margin: 20px;"></a>
+	               	 </div>
+	               </div>
+		   		
+		   	   </div>
+		   </div>
+		{% endfor %}
+	</div>
+{% endblock %}

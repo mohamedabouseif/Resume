@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>main page</title>
+	{% include 'base/css.html'%}
+
+</head>
+<body>
+	<div class="container-fluid" >
+		 
+	  {% include 'base/header.html' %}
+     	  {% block content %} {% endblock %}
+	  {% include 'base/footer.html'%}
+					
+			
+	</div>
+</body>
+</html>

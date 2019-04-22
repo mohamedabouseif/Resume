@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block content%}
+
+<div class="row">
+	<div class="col-12"><h4 style="text-align: center;padding: 20px"><b>My Projects</b></h4></div>
+</div>
+<div class="row">
+	{% for obj in object_list %}
+
+	<div class="col-3">	
+		<div class="card" style="width: 18rem;margin: 20px;">
+			 <img src={{obj.image.url}} style="width :286px;height: 191px;">
+			 <div class="card-body">
+			    <h4>{{obj.title}}</h4>	
+			 	<a href="{{obj.get_absolute_url}}" target="_blank" class="btn btn-primary">See details</a>
+			 </div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock%}

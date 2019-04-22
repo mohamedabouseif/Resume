@@ -1,0 +1,79 @@
+
+{% extends 'index.html'%}
+{% load static %}
+{% block content %}
+<div class="my-5"></div>
+
+<!-- Contact -->
+<section class="container">
+
+    <!--Contact heading-->
+    <h2 class="h1 m-0" style="text-align: center;">Contact me</h2>
+    <!--Contact description-->
+    <p class="pb-4"  style="text-align: center;">Do you have any questions? Please do not hesitate to contact me directly.I will come <br>back to you within a matter of hours to Reply you.
+
+</p>
+
+    <div class="row justify-content-md-center"">
+
+        <!--Grid column-->
+        <div class="col-lg-8 mb-4 ">
+
+            <!--Form with header-->
+            <div class="card border-primary rounded-0">
+
+                <div class="card-header p-0">
+                    <div class="bg-primary text-white text-center py-2">
+                        <h3><i class="fa fa-envelope"></i> Write to me:</h3>
+                        <p class="m-0">I will write rarely, but only the best content.</p>
+                    </div>
+                </div>
+                <div class="card-body p-3">
+
+              
+                    <form method="POST">{% csrf_token %}
+                      <div class="form-group">
+                        <input type="input" class="form-control" id placeholder="Enter name" name= name >
+                      </div>
+                      <div class="form-group">
+                        <input type="email" class="form-control" id placeholder="Enter email" name= email >
+                      </div>
+                      <div class="form-group">
+                        <input type="input" class="form-control" id placeholder="Enter subject" name= subject >
+                      </div>
+                       <textarea class="form-control rounded-0" rows="10" name= message placeholder="message"></textarea>
+                    
+                      <br>
+                      
+                      <button type="submit" class="btn btn-primary">Send</button>
+                   </form>
+                    
+                </div>
+
+            </div>
+            <!--Form with header-->
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-7">
+
+            <!--Google map-->
+            <div class="mb-4">
+               
+            </div>
+
+
+        </div>
+       <!--Grid column-->
+
+    </div>
+
+</section>
+<!-- Contact -->
+
+
+   
+{% endblock %}
+

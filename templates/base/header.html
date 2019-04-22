@@ -1,0 +1,31 @@
+{% url 'main_page:home' as home_url %}
+{% url 'resume_page:resume' as resume %}
+{% url 'projects_page:projects' as projects %}
+{% url 'contact_page:contact' as contact %}
+<div class="row">
+	  <div class="col-12">	
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+				  <a class="navbar-brand" style="color: greenz" href="{{home_url}}"><b>Abouseif</b></a>
+				  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				    <ul class="navbar-nav mr-auto" >
+				      <li class="nav-item ">
+				        <a class="nav-link" style="color: #1376F9"  href="{{home_url}}">Home</a>
+				      </li>
+				      <li class="nav-item {% if request.path == home_url %} active {% endif %}">
+				        <a class="nav-link" href="{{resume}}" style="color: #1376F9">Resume </a>
+				      </li>
+				      <li class="nav-item {% if request.path == home_url %} active {% endif %}">
+				        <a class="nav-link" href="{{projects}}" style="color: #1376F9">portofollio</a>
+				      </li>
+				      <li class="nav-item {% if request.path == home_url %} active {% endif %}">
+				        <a class="nav-link" href="{{contact}}" style="color: #1376F9">contact</a>
+				      </li>
+				    </ul>   
+				  </div>
+		     </nav>
+        </div>
+      </div>
+
+
+
+   
